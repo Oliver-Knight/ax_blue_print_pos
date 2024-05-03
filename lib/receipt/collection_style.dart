@@ -41,7 +41,7 @@ class CollectionStyle {
           }
           
           .text-right {
-              text-align: right;
+              text-align: left;
           }
           
           .text-justify {
@@ -70,19 +70,19 @@ class CollectionStyle {
           }
           
           .text-extra-large {
-              font-size: 2.2em;
+              font-size: 1.2em;//2.2em
           }
           
           .text-large {
-              font-size: 1.6em;
+              font-size: 0.9em;//1.6em
           }
           
           .text-medium {
-              font-size: 1.2em;
+              font-size: 0.7em;// 1.2em
           }
           
           .text-small {
-              font-size: 0.8em;
+              font-size: 0.6em;//0.8em
           }
       </style>
     ''';
