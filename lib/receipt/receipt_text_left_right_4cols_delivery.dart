@@ -2,8 +2,8 @@ import 'receipt_text_style.dart';
 import 'receipt_text_style_type.dart';
 import 'receipt_text_size_type.dart';
 
-class ReceiptTextLeftRight5Cols {
-  ReceiptTextLeftRight5Cols(
+class ReceiptTextLeftRight4ColsDelivery {
+  ReceiptTextLeftRight4ColsDelivery(
     this.text1,
     this.text2,
     this.text3,
@@ -24,20 +24,21 @@ class ReceiptTextLeftRight5Cols {
   final String text3;
   final String text4;
   final String text5;
+
   final ReceiptTextStyle leftTextStyle;
   final ReceiptTextStyle rightTextStyle;
 
-  String get html =>
-      '''
+  String get html => '''
    
 
 
 <div style='display: flex;'>
-<div style='flex: 27%; text-align: left;'><p style="font-size:21px;">$text1</p></div>
-<div style='flex: 23%; text-align: right;'><p style="font-size:21px;">$text2</p></div>
-<div style='flex: 15%; text-align: right;'><p style="font-size:21px;">$text3</p></div>
-<div style='flex: 21%; text-align: right;'><p style="font-size:21px;">$text4</p></div>
-<div style='flex: 24%; text-align: right;'><p style="font-size:21px;">$text5</p></div>
+<div style='flex: 8%; text-align: left;'><p style="font-size:18px;">$text1</p></div>
+<div style='flex: 45%; text-align: left;'><p style="font-size:18px;">$text2</p></div>
+<div style='flex: 10%; text-align: right;'><p style="font-size:18px;">$text3</p></div>
+<div style='flex: 22%; text-align: right;'><p style="font-size:18px;">$text4</p></div>
+<div style='flex: 15%; text-align: right;'><p style="font-size:18px;">$text5</p></div>
+
 </div> 
   
     

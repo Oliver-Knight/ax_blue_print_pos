@@ -1,5 +1,6 @@
 import 'package:blue_print_pos/receipt/collection_style.dart';
 import 'package:blue_print_pos/receipt/receipt_image.dart';
+import 'package:blue_print_pos/receipt/receipt_two_image.dart';
 import 'receipt_alignment.dart';
 import 'receipt_line.dart';
 import 'receipt_text.dart';
@@ -7,7 +8,10 @@ import 'receipt_text_left_right.dart';
 import 'receipt_text_left_right_3cols.dart';
 import 'receipt_text_left_right_4cols.dart';
 import 'receipt_text_left_right_4cols_stockReturn.dart';
+// import 'receipt_text_left_right_4cols_stockReturn2.dart';
+import 'receipt_text_left_right_4cols_delivery.dart';
 import 'receipt_text_left_right_5cols.dart';
+import 'receipt_text_left_right_6cols.dart';
 import 'receipt_text_left_right_5cols_payment.dart';
 import 'receipt_text_size_type.dart';
 import 'receipt_text_style.dart';
@@ -191,6 +195,38 @@ ${CollectionStyle.all}
     _data += leftRightText.html;
   }
 
+  void addLeftRight4ColDeliveryText(
+    String text1,
+    String text2,
+    String text3,
+    String text4,
+    String text5, {
+    ReceiptTextStyleType leftStyle = ReceiptTextStyleType.normal,
+    ReceiptTextStyleType rightStyle = ReceiptTextStyleType.normal,
+    ReceiptTextSizeType leftSize = ReceiptTextSizeType.medium,
+    ReceiptTextSizeType rightSize = ReceiptTextSizeType.medium,
+  }) {
+    final ReceiptTextLeftRight4ColsDelivery leftRightText =
+        ReceiptTextLeftRight4ColsDelivery(
+      text1,
+      text2,
+      text3,
+      text4,
+      text5,
+      leftTextStyle: ReceiptTextStyle(
+        type: leftStyle,
+        useSpan: true,
+        size: leftSize,
+      ),
+      rightTextStyle: ReceiptTextStyle(
+        type: leftStyle,
+        useSpan: true,
+        size: rightSize,
+      ),
+    );
+    _data += leftRightText.html;
+  }
+
   void addLeftRight5ColText(
     String text1,
     String text2,
@@ -254,6 +290,39 @@ ${CollectionStyle.all}
     _data += leftRightText.html;
   }
 
+  void addLeftRight6ColText(
+    String text1,
+    String text2,
+    String text3,
+    String text4,
+    String text5,
+    String text6, {
+    ReceiptTextStyleType leftStyle = ReceiptTextStyleType.normal,
+    ReceiptTextStyleType rightStyle = ReceiptTextStyleType.normal,
+    ReceiptTextSizeType leftSize = ReceiptTextSizeType.medium,
+    ReceiptTextSizeType rightSize = ReceiptTextSizeType.medium,
+  }) {
+    final ReceiptTextLeftRight6Cols leftRightText = ReceiptTextLeftRight6Cols(
+      text1,
+      text2,
+      text3,
+      text4,
+      text5,
+      text6,
+      leftTextStyle: ReceiptTextStyle(
+        type: leftStyle,
+        useSpan: true,
+        size: leftSize,
+      ),
+      rightTextStyle: ReceiptTextStyle(
+        type: leftStyle,
+        useSpan: true,
+        size: rightSize,
+      ),
+    );
+    _data += leftRightText.html;
+  }
+
   void addLeftRightText(
     String leftText,
     String rightText, {
@@ -294,6 +363,21 @@ ${CollectionStyle.all}
   }) {
     final ReceiptImage image = ReceiptImage(
       base64,
+      width: width,
+      alignment: alignment,
+    );
+    _data += image.html;
+  }
+
+  void addTwoImage(
+    String base64,
+    String base64Two, {
+    int width = 120,
+    ReceiptAlignment alignment = ReceiptAlignment.center,
+  }) {
+    final ReceiptTwoImage image = ReceiptTwoImage(
+      base64,
+      base64Two,
       width: width,
       alignment: alignment,
     );
